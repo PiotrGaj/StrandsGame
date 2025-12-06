@@ -1,4 +1,4 @@
-/* ========== RESET & BASE ========== */
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ========== SCREENS ========== */
+/* Screens */
 .screen {
     display: none;
     width: 100%;
@@ -33,7 +33,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========== PASSWORD SCREEN ========== */
+/* Password screen */
 .password-container {
     background: white;
     padding: 40px 30px;
@@ -96,7 +96,7 @@ body {
     min-height: 20px;
 }
 
-/* ========== GAME SCREEN ========== */
+/* Game screen */
 .game-container {
     background: white;
     padding: 20px;
@@ -121,7 +121,7 @@ header h1 {
     font-style: italic;
 }
 
-/* ========== STRANDS GRID ========== */
+/* Strands grid */
 .strands-section {
     margin-bottom: 20px;
 }
@@ -174,7 +174,7 @@ header h1 {
     pointer-events: none;
 }
 
-/* ========== PRESENT MAP ========== */
+/* Present map */
 .present-map {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -215,7 +215,7 @@ header h1 {
     50% { transform: translateY(-10px); }
 }
 
-/* ========== INPUT SECTION ========== */
+/* Input section */
 .input-section {
     display: flex;
     gap: 10px;
@@ -255,7 +255,7 @@ header h1 {
     transform: scale(0.98);
 }
 
-/* ========== MESSAGE AREA ========== */
+/* Message area */
 .message-area {
     min-height: 50px;
     padding: 15px;
@@ -286,7 +286,7 @@ header h1 {
     75% { transform: translateX(10px); }
 }
 
-/* ========== PROGRESS COUNTER ========== */
+/* Progress counter */
 .progress-counter {
     text-align: center;
     font-size: 14px;
@@ -294,7 +294,7 @@ header h1 {
     font-weight: bold;
 }
 
-/* ========== CONFETTI CANVAS ========== */
+/* Confetti canvas */
 #confettiCanvas {
     position: fixed;
     top: 0;
@@ -305,7 +305,7 @@ header h1 {
     z-index: 9999;
 }
 
-/* ========== VICTORY MODAL ========== */
+/* Victory modal */
 .modal {
     display: none;
     position: fixed;
@@ -365,7 +365,7 @@ header h1 {
     cursor: pointer;
 }
 
-/* ========== MOBILE OPTIMIZATION ========== */
+/* Mobile optimization */
 @media (max-width: 480px) {
     .letter-cell {
         font-size: 14px;
@@ -401,4 +401,104 @@ header h1 {
     .game-container {
         padding: 15px;
     }
+}
+
+/* Reward modal */
+.reward-modal {
+    max-width: 350px;
+}
+
+.reward-text {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: #667eea !important;
+    margin: 20px 0 !important;
+    padding: 20px;
+    background: #f0f4ff;
+    border-radius: 10px;
+}
+
+/* Present interactions */
+.present-item.unlocked {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.present-item.unlocked:hover {
+    transform: scale(1.1) !important;
+}
+
+.present-item.unlocked:active {
+    transform: scale(0.95) !important;
+}
+
+/* Canvas fix */
+#confettiCanvas {
+    display: none; /* Hidden by default, shown during animation */
+}
+
+/* Shake animation fix */
+.shake {
+    animation: shake 0.5s !important;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Selection styles */
+.letter-cell.selected {
+    background: #a8b5ff !important;
+    border-color: #667eea !important;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+/* Mobile touch optimization */
+.letter-cell {
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 480px) {
+    .present-item p {
+        font-size: 9px;
+    }
+    
+    .reward-modal {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+}
+
+/* Reward modal */
+.reward-modal {
+    max-width: 350px;
+}
+
+.reward-text {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: #667eea !important;
+    margin: 20px 0 !important;
+    padding: 20px;
+    background: #f0f4ff;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+/* Present interactions */
+.present-item.unlocked {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.present-item.unlocked:hover {
+    transform: scale(1.15) !important;
+}
+
+.present-item.unlocked:active {
+    transform: scale(0.95) !important;
 }

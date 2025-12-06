@@ -73,14 +73,24 @@
     </div>
 
     <!-- Confetti Canvas -->
-    nvass id="confettiCanvas"></canvas>
+    <canvas id="confettiCanvas"></canvas>
+
+
+    <!-- Reward Modal -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content reward-modal">
+            <h2>Your Reward!</h2>
+            <p id="rewardText" class="reward-text"></p>
+            <button onclick="closeReward()">Close</button>
+        </div>
+    </div>
 
     <!-- Victory Modal -->
     <div id="victoryModal" class="modal">
         <div class="modal-content">
             <h2>🎉 You Did It! 🎉</h2>
             <p>You've unlocked all the presents!</p>
-            <p class="victory-message">Check each present for your surprises! 💝</p>
+            <p class="victory-message">Click each present to see your rewards!</p>
             <button onclick="closeVictory()">Close</button>
         </div>
     </div>
