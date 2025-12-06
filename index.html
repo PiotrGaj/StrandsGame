@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Surprise 🎄</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Password Screen -->
+    <div id="passwordScreen" class="screen active">
+        <div class="password-container">
+            <h1>🎄 Christmas Surprise</h1>
+            <p>Enter the secret password</p>
+            <input type="password" id="passwordInput" placeholder="Password..." autocomplete="off">
+            <button onclick="checkPassword()">Enter</button>
+            <p id="passwordError" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div class="game-container">
+            <!-- Header -->
+            <header>
+                <h1>🎁 Christmas Word Hunt</h1>
+                <p class="theme-hint">Theme: Our Favorite Memories</p>
+            </header>
+
+            <!-- Strands Grid -->
+            <div class="strands-section">
+                <div id="strandsGrid" class="strands-grid"></div>
+            </div>
+
+            <!-- Present Map -->
+            <div class="present-map">
+                <div class="present-item" data-index="0">
+                    <div class="present-icon">🎁</div>
+                    <p>First Word</p>
+                </div>
+                <div class="present-item" data-index="1">
+                    <div class="present-icon">🎁</div>
+                    <p>Third Word</p>
+                </div>
+                <div class="present-item" data-index="2">
+                    <div class="present-icon">🎁</div>
+                    <p>Fifth Word</p>
+                </div>
+                <div class="present-item spangram-present" data-index="3">
+                    <div class="present-icon">🎀</div>
+                    <p>Spangram</p>
+                </div>
+                <div class="present-item main-present" data-index="4">
+                    <div class="present-icon">🌟</div>
+                    <p>All Complete!</p>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <input type="text" id="wordInput" placeholder="Type your word here..." autocomplete="off">
+                <button onclick="submitWord()">Submit</button>
+            </div>
+
+            <!-- Message Area -->
+            <div id="messageArea" class="message-area"></div>
+
+            <!-- Progress Counter -->
+            <div class="progress-counter">
+                Words Found: <span id="wordsFound">0</span>/<span id="totalWords">7</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    nvass id="confettiCanvas"></canvas>
+
+    <!-- Victory Modal -->
+    <div id="victoryModal" class="modal">
+        <div class="modal-content">
+            <h2>🎉 You Did It! 🎉</h2>
+            <p>You've unlocked all the presents!</p>
+            <p class="victory-message">Check each present for your surprises! 💝</p>
+            <button onclick="closeVictory()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

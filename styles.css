@@ -1,0 +1,404 @@
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+/* ========== SCREENS ========== */
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== PASSWORD SCREEN ========== */
+.password-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.password-container h1 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.password-container p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: border 0.3s;
+}
+
+.password-container input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.password-container button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.password-container button:hover {
+    transform: scale(1.02);
+}
+
+.password-container button:active {
+    transform: scale(0.98);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 10px;
+    min-height: 20px;
+}
+
+/* ========== GAME SCREEN ========== */
+.game-container {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.theme-hint {
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ========== STRANDS GRID ========== */
+.strands-section {
+    margin-bottom: 20px;
+}
+
+.strands-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.letter-cell {
+    aspect-ratio: 1;
+    background: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+}
+
+.letter-cell:hover {
+    background: #e8e8e8;
+    transform: scale(1.05);
+}
+
+.letter-cell.selected {
+    background: #a8b5ff;
+    border-color: #667eea;
+}
+
+.letter-cell.found {
+    background: #6dd5ed;
+    border-color: #2193b0;
+    color: white;
+    pointer-events: none;
+}
+
+.letter-cell.spangram {
+    background: #ffd700;
+    border-color: #ffb700;
+    color: #333;
+    pointer-events: none;
+}
+
+/* ========== PRESENT MAP ========== */
+.present-map {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.present-item {
+    text-align: center;
+    opacity: 0.3;
+    transition: all 0.5s;
+}
+
+.present-item.unlocked {
+    opacity: 1;
+    animation: bounce 0.6s;
+}
+
+.present-icon {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.present-item p {
+    font-size: 10px;
+    color: #666;
+}
+
+.main-present .present-icon {
+    font-size: 2.5em;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ========== INPUT SECTION ========== */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.input-section input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.input-section button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.input-section button:hover {
+    transform: scale(1.02);
+}
+
+.input-section button:active {
+    transform: scale(0.98);
+}
+
+/* ========== MESSAGE AREA ========== */
+.message-area {
+    min-height: 50px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s;
+    margin-bottom: 15px;
+}
+
+.message-area.success {
+    background: #d4edda;
+    color: #155724;
+    animation: shake 0.5s;
+}
+
+.message-area.error {
+    background: #f8d7da;
+    color: #721c24;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* ========== PROGRESS COUNTER ========== */
+.progress-counter {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+
+/* ========== CONFETTI CANVAS ========== */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ========== VICTORY MODAL ========== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    animation: scaleIn 0.5s;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.victory-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ========== MOBILE OPTIMIZATION ========== */
+@media (max-width: 480px) {
+    .letter-cell {
+        font-size: 14px;
+    }
+    
+    .present-map {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .present-map .main-present {
+        grid-column: 2;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    .input-section {
+        flex-direction: column;
+    }
+    
+    .input-section button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .letter-cell {
+        font-size: 12px;
+        border-radius: 6px;
+    }
+    
+    .game-container {
+        padding: 15px;
+    }
+}
