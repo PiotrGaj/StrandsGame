@@ -22,10 +22,12 @@
     <div id="gameScreen" class="screen">
         <div class="game-container">
             <!-- Header -->
-            <header>
-                <h1>🎁 Christmas Word Hunt</h1>
-                <p class="theme-hint">Theme: Our Favorite Memories</p>
+            <header style="position: relative;">
+                <button onclick="resetGame()" class="reset-btn" title="Reset Game">↻</button>
+                <h1>🎁 Christmas Word Hunt 🎁</h1>
+                <p class="theme-hint">Theme: Our Favorite Travel Memories</p>
             </header>
+
 
             <!-- Strands Grid -->
             <div class="strands-section">
@@ -36,25 +38,30 @@
             <div class="present-map">
                 <div class="present-item" data-index="0">
                     <div class="present-icon">🎁</div>
-                    <p>First Word</p>
+                    <p>1st Word</p>
                 </div>
                 <div class="present-item" data-index="1">
                     <div class="present-icon">🎁</div>
-                    <p>Third Word</p>
+                    <p>3rd Word</p>
                 </div>
                 <div class="present-item" data-index="2">
                     <div class="present-icon">🎁</div>
-                    <p>Fifth Word</p>
+                    <p>4th Word</p>
                 </div>
-                <div class="present-item spangram-present" data-index="3">
+                <div class="present-item" data-index="3">
+                    <div class="present-icon">🎁</div>
+                    <p>Regular</p>
+                </div>
+                <div class="present-item spangram-present" data-index="4">
                     <div class="present-icon">🎀</div>
                     <p>Spangram</p>
                 </div>
-                <div class="present-item main-present" data-index="4">
+                <div class="present-item main-present" data-index="5">
                     <div class="present-icon">🌟</div>
-                    <p>All Complete!</p>
+                    <p>FINAL</p>
                 </div>
             </div>
+
 
             <!-- Input Section -->
             <div class="input-section">

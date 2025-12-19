@@ -115,6 +115,26 @@ header h1 {
     margin-bottom: 5px;
 }
 
+.reset-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #cbd5e0; /* Subtle color */
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.reset-btn:hover {
+    color: #667eea; /* Color on hover */
+    transform: rotate(180deg); /* Spin effect */
+}
+
+
 .theme-hint {
     color: #666;
     font-size: 14px;
@@ -128,10 +148,11 @@ header h1 {
 
 .strands-grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 4px;
     max-width: 100%;
     margin: 0 auto;
+    position: relative;
 }
 
 .letter-cell {
@@ -148,6 +169,8 @@ header h1 {
     cursor: pointer;
     transition: all 0.3s;
     user-select: none;
+    z-index: 2;
+    background: white;
 }
 
 .letter-cell:hover {
@@ -156,8 +179,8 @@ header h1 {
 }
 
 .letter-cell.selected {
-    background: #a8b5ff;
-    border-color: #667eea;
+    background: transparent !important;
+    color: #667eea;
 }
 
 .letter-cell.found {
@@ -177,7 +200,7 @@ header h1 {
 /* Present map */
 .present-map {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 20px;
     padding: 15px;
