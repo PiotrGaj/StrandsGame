@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas Surprise 🎄</title>
+    <title>🎄 Christmas Surprise 🎄</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Password Screen -->
     <div id="passwordScreen" class="screen active">
         <div class="password-container">
-            <h1>🎄 Christmas Surprise</h1>
+            <h1>🎄 Christmas Surprise 🎄</h1>
             <p>Enter the secret password</p>
             <input type="password" id="passwordInput" placeholder="Password..." autocomplete="off">
             <button onclick="checkPassword()">Enter</button>
@@ -24,7 +24,7 @@
             <!-- Header -->
             <header style="position: relative;">
                 <button onclick="resetGame()" class="reset-btn" title="Reset Game">↻</button>
-                <h1>🎁 Christmas Word Hunt 🎁</h1>
+                <h1>Christmas Word Hunt</h1>
                 <p class="theme-hint">Theme: Our Favorite Travel Memories</p>
             </header>
 
@@ -33,6 +33,9 @@
             <div class="strands-section">
                 <div id="strandsGrid" class="strands-grid"></div>
             </div>
+
+            <!-- Message Area -->
+            <div id="messageArea" class="message-area"></div>
 
             <!-- Present Map -->
             <div class="present-map">
@@ -68,9 +71,6 @@
                 <input type="text" id="wordInput" placeholder="Type your word here..." autocomplete="off">
                 <button onclick="submitWord()">Submit</button>
             </div>
-
-            <!-- Message Area -->
-            <div id="messageArea" class="message-area"></div>
 
             <!-- Progress Counter -->
             <div class="progress-counter">
