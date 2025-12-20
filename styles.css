@@ -107,24 +107,27 @@ body {
 header {
     text-align: center;
     margin-bottom: 20px;
+    position: relative;
+    padding: 0 50px;
 }
 
 header h1 {
     color: #667eea;
     font-size: 1.5em;
     margin-bottom: 5px;
+    line-height: 1.2;
 }
 
 .reset-btn {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 10px;
     background: none;
     border: none;
     font-size: 24px;
     color: #cbd5e0; /* Subtle color */
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px;
     transition: all 0.3s;
     z-index: 100;
 }
@@ -396,10 +399,16 @@ header h1 {
     
     .present-map {
         grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    .present-icon {
+        font-size: 1.5em; 
     }
     
-    .present-map .main-present {
-        grid-column: 2;
+    .present-map p {
+        font-size: 9px;
+        white-space: nowrap; /* Prevents text from wrapping and making rows tall */
     }
     
     header h1 {
